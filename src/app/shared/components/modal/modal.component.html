@@ -1,0 +1,6 @@
+<div [ngClass]="{'modal' : modalVisiblityBoolSet, 'modal-none' : !modalVisiblityBoolSet}">
+  <div class="modal-content">
+    <span (click)="setVisibilityBool(false)" class="close">&times;</span>
+    <ng-content></ng-content>
+  </div>
+</div>

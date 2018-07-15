@@ -1,0 +1,68 @@
+<form class="form-horizontal">
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend>Edit Contact</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="txtfirstName">First Name</label>
+      <div class="col-md-4">
+        <input id="txtfirstName" name="txtfirstName" type="text" placeholder="First Name" [(ngModel)]="firstName" class="form-control input-md"
+          required="">
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="txtlastName">Last Name</label>
+      <div class="col-md-4">
+        <input id="txtlastName" name="txtlastName" type="text" placeholder="Last Name" [(ngModel)]="lastName" class="form-control input-md"
+          required="">
+      </div>
+    </div>
+
+    <!-- Select Basic -->
+
+    <!-- Button -->
+
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="txtemail">Email</label>
+      <div class="col-md-4">
+        <input id="txtemail" name="txtemail" type="text" placeholder="Email" [(ngModel)]="email" class="form-control input-md" required="">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="txtcontactNo">Contact No.</label>
+      <div class="col-md-4">
+        <input id="txtcontactNo" name="txtcontactNo" type="text" placeholder="Contact No." [(ngModel)]="contactNo" class="form-control input-md"
+          required="">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="selectbasic">Status</label>
+      <div class="col-md-4">
+        <select id="selectbasic" name="selectbasic" class="form-control" [(ngModel)]="status">
+          <option value="Active">Active</option>
+          <option value="InActive">InActive</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="singlebutton"></label>
+      <div class="col-md-4">
+        <button id="singlebutton" (click)="save()" name="singlebutton" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

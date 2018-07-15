@@ -1,0 +1,35 @@
+<div>
+  <button (click)="addContactBool()">Add Contact</button>
+  <table class="table" (click)="tableClickEvent($event)">
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers;trackBy: trackByForHeaders">{{header.displayName}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts ;trackBy: trackByForRows">
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.contactNo}}</td>
+        <td>
+          <app-switch-button [active]="contact.status" (toogle)="statusSwitch($event,contact.id)"></app-switch-button>
+        </td>
+        <td>
+          <button type="button" name="btnEdit" [id]="contact.id" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-edit"></span> Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-modal [modalVisiblityBool]="editContactModalBool" *ngIf="editContactModalBool" (closeDialog)="closeEditDialog()">
+  <app-edit-contact (saveContact)="saveEditedContact($event)" *ngIf="editContactModalBool" [contact]="editContact"></app-edit-contact>
+</app-modal>
+
+
+
+<app-modal [modalVisiblityBool]="addContactModalBool" *ngIf="addContactModalBool" (closeDialog)="closeAddDialog()">
+  <app-add-contact (saveContact)="saveNewContact($event)" *ngIf="addContactModalBool" (addContact)="addContact($event)"></app-add-contact>
+</app-modal>
